@@ -62,7 +62,7 @@ View the results in the `./example/test_split_by_SEP_1.txt` folder<br />
 
 - STEP 2: Feature standardization.
 <br />
-  Run the python script `python preprocess_features.py`.
+  Run the python script ```python preprocess_features.py```.
 
 
 - STEP 3: Create the dataset.
@@ -73,13 +73,13 @@ View the results in the `./example/test_split_by_SEP_1.txt` folder<br />
 
 - STEP 4: Train your own model:
 <br />
-  1. Switch your working directory to the `Fold-SPI/train` folder.
-  2. Run the script `train.py`. Options are:<br />
-  `--feature_dir FEATURE_DIR`<br />
-  `--train_file TRAIN_FILE`<br />
-  `--test_file TEST_FILE`<br />
-  `--label_file LABEL_FILE`<br />
-  `--preds_file PREDS_FILE`<br />
+  1. Switch your working directory to the ```Fold-SPI/train``` folder.
+  2. Run the script ```train.py```. Options are:<br />
+  ```--feature_dir FEATURE_DIR```<br />
+  ```--train_file TRAIN_FILE```<br />
+  ```--test_file TEST_FILE```<br />
+  ```--label_file LABEL_FILE```<br />
+  ```--preds_file PREDS_FILE```<br />
   3. Or run the script `train_fold.py`. Options are:<br />
   `--feature_dir FEATURE_DIR`<br />
   `--data_file DATA_FILE`<br />
