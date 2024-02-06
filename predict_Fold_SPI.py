@@ -23,7 +23,7 @@ predict_interact = []
 predict_file = parser.parse_args().predict_file
 with open(predict_file, 'r') as f:
     for line in f.readlines():
-        line_data = line.strip().split('\t')[:2]
+        line_data = line.strip().split(',')[:2]
         line_data.append(0.0)
         predict_interact.append(line_data)
 predict_dataset = LabelledDataset(predict_interact, Feature_dir)
@@ -40,13 +40,6 @@ def predict(model, dataloader):
             X_prot_2 = batch_data[0].float()
             X_prot_dense = batch_data[2].float()
             X_prot_scannet = batch_data[4].float()
-
-            X_SEP_2 = X_SEP_2[:, :50]
-            X_SEP_dense = X_SEP_dense[:, :50]
-            X_SEP_scannet = X_SEP_scannet[:, :50]
-            X_prot_2 = X_prot_2[:, round((X_prot_2.shape[1] / 2) - 25):round((X_prot_2.shape[1] / 2) + 25)]
-            X_prot_dense = X_prot_dense[:, round((X_prot_2.shape[1] / 2) - 25):round((X_prot_2.shape[1] / 2) + 25)]
-            X_prot_scannet = X_prot_scannet[:, round((X_prot_2.shape[1] / 2) - 25):round((X_prot_2.shape[1] / 2) + 25)]
 
             pred, SEP_global, protein_global = model(X_SEP_2, X_prot_2, X_SEP_dense, X_prot_dense, X_SEP_scannet, X_prot_scannet)
             preds.extend(pred.detach().cpu().numpy().tolist())
