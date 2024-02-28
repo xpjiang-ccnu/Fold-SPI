@@ -33,9 +33,9 @@ pip install scikit-learn
 1.To predict with our example code, first unzip the test set by `unzip ./example/*.zip` and use the example data with the command:
 
 ```shell
-python predict_Fold_SPI.py --feature_dir ./example/ --model_dir ./example/model_best.pkl --predict_file ./example --preds_file test_split_by_SEP_1.txt
+python predict_Fold_SPI.py --feature_dir ./example/ --model_dir ./example/model_best.pkl --input_file ./example/test_split_by_SEP_1.txt --output_file Fold_SPI_preds_SEP_1.txt
 ```
-View the results in the `./example/test_split_by_SEP_1.txt` folder<br />
+View the results in the `./example/Fold_SPI_preds_SEP_1.txt` folder<br />
 
 2.To generate yourself features, please refer to the instructuion in `Feature standardization`.<br />
 
