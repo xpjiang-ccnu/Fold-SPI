@@ -12,7 +12,7 @@ import argparse
 parser = argparse.ArgumentParser(description='Fold_SPI predict')
 parser.add_argument('--feature_dir', default='./data_prepare/STRING_data/feature/', type=str)
 parser.add_argument('--model_dir', default='./ckpts/STRING/model_best.pkl', type=str)
-parser.add_argument('--predict_file', default='./data_prepare/STRING_data/split_by_SEP/test_SEP_1.txt', type=str)
+parser.add_argument('--input_file', default='./data_prepare/STRING_data/split_by_SEP/test_SEP_1.txt', type=str)
 parser.add_argument('--preds_file', default='Fold_SPI_preds_SEP_1.txt', type=str)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -20,7 +20,7 @@ print('load feature dict')
 
 Feature_dir = parser.parse_args().feature_dir
 predict_interact = []
-predict_file = parser.parse_args().predict_file
+predict_file = parser.parse_args().input_file
 with open(predict_file, 'r') as f:
     for line in f.readlines():
         line_data = line.strip().split(',')[:2]
